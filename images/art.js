@@ -10,6 +10,7 @@ const Jason = require('./Jason.jpg');
 const LDT = require('./LDT.jpg');
 const Niko = require('./Niko.jpg');
 const Steven = require('./Steven.jpg');
+const Fila = require('./Fila.png');
 const sp1 = require('./sp1.jpg');
 const sp2 = require('./sp2.jpg');
 const sp3 = require('./sp3.jpg');
@@ -67,6 +68,10 @@ const art = [
   {
     title: "Alyssa '20",
     image: Alyssa,
+  },
+  {
+    title: "Fila '20",
+    image: Fila,
   },
   {
     title: "Self Portrait 1 '20",

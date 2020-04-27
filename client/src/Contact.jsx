@@ -8,7 +8,7 @@ class Contact extends React.Component {
       name: '',
       email: '',
       insta: '',
-      fav: '',
+      subject: '',
       message: '',
     };
   }
@@ -36,6 +36,13 @@ class Contact extends React.Component {
     this.setState({ email: event.target.value });
   }
 
+  onSubjectChange(event) {
+    this.setState({ subject: event.target.value });
+  }
+
+  onInstaChange(event) {
+    this.setState({ insta: event.target.value });
+  }
   onMessageChange(event) {
     this.setState({ message: event.target.value });
   }
@@ -48,38 +55,32 @@ class Contact extends React.Component {
       <div className="contain">
         <div className="wrapper">
           <div className="contacts">
-            <h3>Our contacts</h3>
-
-            <ul>
-              <li>San Joe St.</li>
-              <li>00-1212121-11</li>
-              <li>mail@mail.com</li>
-            </ul>
+            {/* <h3>Let's Connect:</h3> */}
+            <div>
+              <h3>Find me on Insta:</h3>
+            </div>
+            <a
+              href="https://www.instagram.com/mollywiththebrightredhair/?hl=en"
+              className="icons2"
+            >
+              I
+            </a>
+            <div>
+              <h3>Or send me an email:</h3>
+            </div>
+            <a href="mailto:roman.emmons@gmail.com" className="icons2">
+              M
+            </a>
+            <div>
+              <h3>I'm available for commissions!</h3>
+            </div>
           </div>
-
           <div className="form">
-            <h3>Send us a message</h3>
+            <h3>You can also reach me here:</h3>
             <form action="">
-              {/* <p>
-        <label for="">Your name</label>
-        <input type="text">
-      </p> */}
-              {/* <p>
-        <label for="">Skype</label>
-        <input type="text">
-      </p> */}
-              {/* <p>
-        <label for="">Email Address</label>
-        <input type="text">
-      </p> */}
-              {/* <p>
-        <label for="">Topic</label>
-        <input type="text">
-      </p> */}
               <p>
                 <input
-                  placeholder="Name"
-                  type="text"
+                  placeholder="name"
                   id="name"
                   value={this.state.name}
                   onChange={this.onNameChange.bind(this)}
@@ -87,28 +88,27 @@ class Contact extends React.Component {
               </p>
               <p>
                 <input
-                  placeholder="insta"
-                  id="insta"
-                  value={this.state.insta}
-                  onChange={this.onEmailChange.bind(this)}
-                />
-              </p>
-              <p>
-                <input
-                  placeholder="Email"
+                  placeholder="email"
                   type="email"
                   id="email"
-                  aria-describedby="emailHelp"
                   value={this.state.email}
                   onChange={this.onEmailChange.bind(this)}
                 />
               </p>
               <p>
                 <input
-                  placeholder="favorite color"
-                  id="fav"
-                  value={this.state.fav}
-                  onChange={this.onEmailChange.bind(this)}
+                  placeholder="subject"
+                  id="subject"
+                  value={this.state.subject}
+                  onChange={this.onSubjectChange.bind(this)}
+                />
+              </p>
+              <p>
+                <input
+                  placeholder="insta"
+                  id="insta"
+                  value={this.state.insta}
+                  onChange={this.onInstaChange.bind(this)}
                 />
               </p>
 
@@ -125,12 +125,8 @@ class Contact extends React.Component {
                   rows="7"
                 />
               </p>
-              {/* <p className="full-width">
-                <label for="">Write your message</label>
-                <textarea name="" id="" cols="30" rows="7"></textarea>
-              </p> */}
               <p className="full-width">
-                <button>Send</button>
+                <button onSubmit={this.handleSubmit.bind(this)}>Send</button>
               </p>
             </form>
           </div>
@@ -141,48 +137,3 @@ class Contact extends React.Component {
 }
 
 export default Contact;
-
-{
-  /* <div className="contactContainer">
-<form
-  id="contact-form"
-  onSubmit={this.handleSubmit.bind(this)}
-  method="POST"
->
-  <div className="form-group">
-    <input
-      placeholder="Name"
-      type="text"
-      className="feedback-input"
-      id="name"
-      value={this.state.name}
-      onChange={this.onNameChange.bind(this)}
-    />
-  </div>
-  <div className="form-group">
-    <input
-      placeholder="Email"
-      type="email"
-      className="feedback-input"
-      id="email"
-      aria-describedby="emailHelp"
-      value={this.state.email}
-      onChange={this.onEmailChange.bind(this)}
-    />
-  </div>
-  <div className="form-group">
-    <textarea
-      placeholder="Message"
-      className="feedback-input"
-      rows="5"
-      id="message"
-      value={this.state.message}
-      onChange={this.onMessageChange.bind(this)}
-    />
-  </div>
-  <button type="submit" className="btn btn-animations">
-    Submit
-  </button>
-</form>
-</div> */
-}
